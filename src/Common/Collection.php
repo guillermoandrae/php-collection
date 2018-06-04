@@ -4,8 +4,6 @@ namespace Guillermoandrae\Common;
 
 final class Collection extends AbstractAggregate implements CollectionInterface
 {
-    use JsonableTrait;
-
     public static function make(array $items = []): CollectionInterface
     {
         return new static($items);
@@ -84,5 +82,10 @@ final class Collection extends AbstractAggregate implements CollectionInterface
     public function toJson(): string
     {
         return json_encode($this->toArray());
+    }
+
+    public function __toString(): string
+    {
+        return $this->toJson();
     }
 }

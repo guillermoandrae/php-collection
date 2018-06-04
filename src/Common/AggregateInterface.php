@@ -27,7 +27,7 @@ interface AggregateInterface extends \ArrayAccess, \IteratorAggregate
      * Registers an item using the provided key and value.
      *
      * @param mixed $key  The desired key.
-     * @param $value  The desired value.
+     * @param mixed $value  The desired value.
      * @return mixed
      */
     public function set($key, $value);

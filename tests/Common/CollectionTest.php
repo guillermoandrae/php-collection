@@ -133,7 +133,7 @@ class CollectionTest extends TestCase
 
     public function testToJson()
     {
-        $this->assertSame(json_encode($this->items), $this->collection->toJson());
+        $this->assertSame(json_encode($this->items), (string) $this->collection);
     }
 
     protected function setUp()

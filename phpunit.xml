@@ -12,6 +12,7 @@
             <directory suffix=".php">src</directory>
             <exclude>
                 <directory suffix="Interface.php">src/</directory>
+                <directory suffix="helpers.php">src/</directory>
             </exclude>
         </whitelist>
     </filter>

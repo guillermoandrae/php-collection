@@ -33,8 +33,8 @@ final class Collection extends AbstractAggregate implements CollectionInterface
      */
     public function last()
     {
-        $array = array_reverse($this->items);
-        return $array[0];
+        $count = count($this->items);
+        return $this->items[$count-1];
     }
 
     /**
@@ -56,7 +56,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
             return $item1[$fieldName] <=> $item2[$fieldName];
         });
         if ($reverse) {
-            krsort($results);
+            $results = array_reverse($results);
         }
         return new static($results);
     }

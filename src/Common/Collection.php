@@ -49,12 +49,15 @@ final class Collection extends AbstractAggregate implements CollectionInterface
     /**
      * {@inheritDoc}
      */
-    public function sortBy(string $fieldName): CollectionInterface
+    public function sortBy(string $fieldName, bool $reverse = false): CollectionInterface
     {
         $results = $this->items;
         usort($results, function ($item1, $item2) use ($fieldName) {
             return $item1[$fieldName] <=> $item2[$fieldName];
         });
+        if ($reverse) {
+            krsort($results);
+        }
         return new static($results);
     }
 

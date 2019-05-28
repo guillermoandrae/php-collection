@@ -2,9 +2,9 @@
 
 namespace Test\Common;
 
+use PHPUnit\Framework\TestCase;
 use Guillermoandrae\Common\Collection;
 use Guillermoandrae\Common\CollectionInterface;
-use PHPUnit\Framework\TestCase;
 
 class CollectionTest extends TestCase
 {
@@ -106,6 +106,12 @@ class CollectionTest extends TestCase
     {
         $sorted = $this->collection->sortBy('age');
         $this->assertTrue($sorted->first()['age'] < $sorted->last()['age']);
+    }
+
+    public function testSortByReverse()
+    {
+        $sorted = $this->collection->sortBy('age', true);
+        $this->assertTrue($sorted->first()['age'] > $sorted->last()['age']);
     }
 
     public function testFilter()

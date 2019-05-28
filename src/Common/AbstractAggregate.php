@@ -46,7 +46,7 @@ abstract class AbstractAggregate implements AggregateInterface
 
      /**
      * {@inheritDoc}
-     */ 
+     */
     final public function set($key, $value)
     {
         $this->offsetSet($key, $value);

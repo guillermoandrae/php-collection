@@ -2,7 +2,7 @@
 
 namespace Guillermoandrae\Common;
 
-interface CollectionInterface extends AggregateInterface, ArrayableInterface, JsonableInterface
+interface CollectionInterface extends AggregateInterface, ArrayableInterface, JsonableInterface, \Countable
 {
     /**
      * Returns a new collection built using the provided items.

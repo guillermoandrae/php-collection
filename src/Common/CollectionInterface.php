@@ -72,12 +72,14 @@ interface CollectionInterface extends AggregateInterface, ArrayableInterface, Js
     public function limit(int $offset = 0, int $limit = null): CollectionInterface;
 
     /**
-     * Returns a collection sorted by the provided field name.
+     * Returns a collection sorted by the provided field name. Optionally returns the
+     * sorted collection in reverse order.
      *
      * @param string $fieldName  The field name to use when grouping results.
+     * @param boolean $reverse  OPTIONAL Whether or not to return the sort in reverse order.
      * @return CollectionInterface
      */
-    public function sortBy(string $fieldName): CollectionInterface;
+    public function sortBy(string $fieldName, bool $reverse = false): CollectionInterface;
 
     /**
      * Returns a collection filtered by the provided callback.

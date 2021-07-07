@@ -33,7 +33,7 @@ class AggregateTest extends TestCase
         );
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->aggregate = $this->getMockForAbstractClass(
             AbstractAggregate::class,

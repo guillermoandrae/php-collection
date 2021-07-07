@@ -9,7 +9,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
      */
     public static function make(array $items = []): CollectionInterface
     {
-        return new static($items);
+        return new Collection($items);
     }
 
     /**
@@ -52,13 +52,13 @@ final class Collection extends AbstractAggregate implements CollectionInterface
     public function sortBy(string $fieldName, bool $reverse = false): CollectionInterface
     {
         $results = $this->items;
-        usort($results, function ($item1, $item2) use ($fieldName) {
+        usort($results, static function ($item1, $item2) use ($fieldName) {
             return $item1[$fieldName] <=> $item2[$fieldName];
         });
         if ($reverse) {
             $results = array_reverse($results);
         }
-        return new static($results);
+        return new Collection($results);
     }
 
     /**
@@ -84,7 +84,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
     {
         $items = $this->items;
         shuffle($items);
-        return new static($items);
+        return new Collection($items);
     }
 
     /**
@@ -92,7 +92,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
      */
     public function limit(int $offset = 0, int $limit = null): CollectionInterface
     {
-        return new static(array_slice($this->items, $offset, $limit));
+        return new Collection(array_slice($this->items, $offset, $limit));
     }
 
     /**
@@ -100,7 +100,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
      */
     public function filter(callable $callback): CollectionInterface
     {
-        return new static(array_filter($this->items, $callback));
+        return new Collection(array_filter($this->items, $callback));
     }
 
     /**
@@ -108,7 +108,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
      */
     public function map(callable $callback): CollectionInterface
     {
-        return new static(array_map($callback, $this->items));
+        return new Collection(array_map($callback, $this->items));
     }
 
     /**
@@ -116,7 +116,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
      */
     public function toArray(): array
     {
-        return array_map(function ($value) {
+        return array_map(static function ($value) {
             return $value instanceof ArrayableInterface ? $value->toArray() : $value;
         }, $this->items);
     }

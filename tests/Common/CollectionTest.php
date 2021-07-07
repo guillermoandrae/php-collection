@@ -142,7 +142,7 @@ class CollectionTest extends TestCase
         $this->assertSame(json_encode($this->items), (string) $this->collection);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->collection = new Collection($this->items);
     }

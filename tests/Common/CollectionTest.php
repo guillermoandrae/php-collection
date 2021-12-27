@@ -11,7 +11,7 @@ class CollectionTest extends TestCase
     /**
      * @var array
      */
-    private $items = [
+    private array $items = [
         ['name' => 'Me', 'age' => 30],
         ['name' => 'You', 'age' => 21],
         ['name' => 'Her', 'age' => 28],
@@ -21,7 +21,7 @@ class CollectionTest extends TestCase
     /**
      * @var CollectionInterface
      */
-    private $collection;
+    private CollectionInterface $collection;
 
     public function testMake()
     {
@@ -43,6 +43,8 @@ class CollectionTest extends TestCase
     public function testLast()
     {
         $this->assertSame($this->items[3], $this->collection->last());
+        $this->collection->set('test', 'last');
+        $this->assertSame('last', $this->collection->last());
     }
 
     public function testRandom()

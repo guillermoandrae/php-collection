@@ -11,7 +11,7 @@ class AggregateTest extends TestCase
     /**
      * @var AbstractAggregate
      */
-    protected $aggregate;
+    protected AbstractAggregate $aggregate;
 
     public function testSetAndGet()
     {

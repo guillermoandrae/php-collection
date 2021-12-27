@@ -3,7 +3,6 @@
 namespace Guillermoandrae\Common;
 
 use ArrayIterator;
-use JetBrains\PhpStorm\Pure;
 
 abstract class AbstractAggregate implements AggregateInterface
 {

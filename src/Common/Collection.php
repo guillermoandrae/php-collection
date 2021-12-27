@@ -23,7 +23,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
     /**
      * {@inheritDoc}
      */
-    public function first()
+    public function first(): mixed
     {
         return $this->items[0];
     }
@@ -31,16 +31,16 @@ final class Collection extends AbstractAggregate implements CollectionInterface
     /**
      * {@inheritDoc}
      */
-    public function last()
+    public function last(): mixed
     {
-        $count = count($this->items);
-        return $this->items[$count-1];
+        $key = array_key_last($this->items);
+        return $this->items[$key];
     }
 
     /**
      * {@inheritDoc}
      */
-    public function random()
+    public function random(): mixed
     {
         $key = array_rand($this->items);
         return $this->get($key);

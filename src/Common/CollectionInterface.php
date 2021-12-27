@@ -24,21 +24,21 @@ interface CollectionInterface extends AggregateInterface, ArrayableInterface, Js
      *
      * @return mixed
      */
-    public function first();
+    public function first(): mixed;
 
     /**
      * Returns the last item in the collection.
      *
      * @return mixed
      */
-    public function last();
+    public function last(): mixed;
 
     /**
      * Returns a random item from the collection.
      *
      * @return mixed
      */
-    public function random();
+    public function random(): mixed;
 
     /**
      * Returns the number of items in the collection.

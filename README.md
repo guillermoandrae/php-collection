@@ -7,5 +7,4 @@ A pared-down implementation of [Laravel's Collections](https://laravel.com/docs/
 Do this, then relax:
 ```
 composer require guillermoandrae/php-collection
-
 ```

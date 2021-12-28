@@ -69,7 +69,7 @@ interface CollectionInterface extends AggregateInterface, ArrayableInterface, Js
      * @param int|null $limit The limit.
      * @return CollectionInterface
      */
-    public function limit(int $offset = 0, int $limit = null): CollectionInterface;
+    public function limit(int $offset = 0, ?int $limit = null): CollectionInterface;
 
     /**
      * Returns a collection sorted by the provided field name. Optionally returns the

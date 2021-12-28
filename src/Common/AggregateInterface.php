@@ -18,7 +18,7 @@ interface AggregateInterface extends \ArrayAccess, \IteratorAggregate
      * returns the provided default value.
      *
      * @param mixed $offset  The offset associated with the desired item.
-     * @param mixed|null $default  The default value.
+     * @param mixed $default  The default value.
      * @return mixed
      */
     public function get(mixed $offset, mixed $default = null): mixed;

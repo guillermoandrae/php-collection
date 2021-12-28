@@ -90,7 +90,7 @@ final class Collection extends AbstractAggregate implements CollectionInterface
     /**
      * {@inheritDoc}
      */
-    public function limit(int $offset = 0, int $limit = null): CollectionInterface
+    public function limit(int $offset = 0, ?int $limit = null): CollectionInterface
     {
         return new Collection(array_slice($this->items, $offset, $limit));
     }

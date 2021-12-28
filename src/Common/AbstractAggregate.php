@@ -28,7 +28,7 @@ abstract class AbstractAggregate implements AggregateInterface
     /**
      * {@inheritDoc}
      */
-    final public function has($offset): bool
+    final public function has(mixed $offset): bool
     {
         return $this->offsetExists($offset);
     }
@@ -55,7 +55,7 @@ abstract class AbstractAggregate implements AggregateInterface
     /**
      * {@inheritDoc}
      */
-    public function remove($offset): void
+    public function remove(mixed $offset): void
     {
         $this->offsetUnset($offset);
     }
@@ -63,7 +63,7 @@ abstract class AbstractAggregate implements AggregateInterface
     /**
      * {@inheritDoc}
      */
-    final public function offsetExists($offset): bool
+    final public function offsetExists(mixed $offset): bool
     {
         return array_key_exists($offset, $this->items);
     }
@@ -71,7 +71,7 @@ abstract class AbstractAggregate implements AggregateInterface
     /**
      * {@inheritDoc}
      */
-    final public function offsetGet($offset): mixed
+    final public function offsetGet(mixed $offset): mixed
     {
         return $this->items[$offset];
     }
@@ -79,7 +79,7 @@ abstract class AbstractAggregate implements AggregateInterface
     /**
      * {@inheritDoc}
      */
-    final public function offsetSet($offset, $value): void
+    final public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->items[$offset] = $value;
     }
@@ -87,7 +87,7 @@ abstract class AbstractAggregate implements AggregateInterface
     /**
      * {@inheritDoc}
      */
-    final public function offsetUnset($offset): void
+    final public function offsetUnset(mixed $offset): void
     {
         unset($this->items[$offset]);
     }

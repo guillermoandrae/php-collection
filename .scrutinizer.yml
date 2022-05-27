@@ -32,4 +32,3 @@ checks:
         no_exit: false
 coding_style:
     php: true
-filter: {  }
